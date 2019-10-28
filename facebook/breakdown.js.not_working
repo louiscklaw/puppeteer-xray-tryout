@@ -1,0 +1,18 @@
+// IDEA: need a fb account to read the breakdown how to overcome ?
+
+// https://www.facebook.com/ufi/reaction/profile/browser/?ft_ent_identifier=ZmVlZGJhY2s6NjY0NTM1MjQ0MDM2Mzg3&av=580816283
+
+// &reaction_type=1&total_count=12&
+
+const fs = require('fs');
+
+const target_uri = `https://www.facebook.com/ufi/reaction/profile/browser/?ft_ent_identifier=ZmVlZGJhY2s6MjcyODk5Nzk4MzgxOTQ3Nw%3D%3D&av=580816283`
+
+const request = require('request');
+request({
+  url: target_uri,
+  headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'}
+}, function (error, response, body) {
+  console.log(body.search(/(reaction_type=(\d+?)&total_count=(\d+?))/));
+  fs.writeFileSync(`${__dirname}/raw.html`, body);
+});
