@@ -1,0 +1,504 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="news-hkex eng">
+<head><title>
+	CCASS Shareholding Search
+</title><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta property="manualPath" content="/sdw/search/searchsdw.aspx" /><meta property="description" content="A search engine to find shareholding information of CCASS Participants in the past of 12 months." /><meta property="keywords" content="CCASS Participant shareholding, participant shareholding, shareholding search, stock shareholding information" /><link href="/ncms/images/favicon.ico" rel="icon" /><link href="/ncms/css/main.css" rel="stylesheet" type="text/css" /><link href="css/sdw.css?v=20180409" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/ncms/script/hkex_app.js"></script>
+    <script type="text/javascript" src="/ncms/script/hkex_settings.js"></script>
+    <script type="text/javascript" src="/ncms/script/hkex_widget.js"></script>
+    <script type="text/javascript">
+        var checkShareholdingDate = "true";
+        //var pageDefaultTitle = "CCASS Shareholding Search";
+    </script>
+</head>
+<body>
+    <script type="text/javascript" src="/ncms/script/vendor.js"></script>
+    <!-- CMS Control Header START -->
+    <script type="text/javascript" src="/ncms/script/hkex_head.js"></script>
+    <!-- CMS Control Header END -->
+
+    <script type="text/javascript" src="js/search_form_var_eng.js?v=20180409"></script>
+    <script type="text/javascript" src="js/search_form.js?v=20180409"></script>
+
+    <form name="form1" method="post" action="./searchsdw.aspx" id="form1" style="text-align: left;">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTIwNTMyMzMwMThkZLiCLeQCG/lBVJcNezUV/J0rsyMr" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A7B2BBE2" />
+        <input type="hidden" name="today" id="today" value="20191028" />
+        <input type="hidden" name="sortBy" id="sortBy" value="shareholding" />
+        <input type="hidden" name="sortDirection" id="sortDirection" value="desc" />
+        <input type="hidden" name="alertMsg" id="alertMsg" />
+
+        <div id="hkex_news_header_section" class="ccass-header-section">
+            <section class="ccass-search-search-bar search-bar">
+                <div class="container search-component">
+					<div class="filter__container-ccass-shareholding search-bar-filter__container">
+
+                        <div class="filter__buttonGroup-mobile">
+							<a tabindex="0" class="btn-close-overlay" href="#">X</a>
+						</div>
+
+						<div class="filter__inputGroup">
+							<ul>
+								<li class="filter__container-input searchDate">
+									<div class="form-input-text">
+										<label for="searchDate">Shareholding Date</label>
+                                        <input name="txtShareholdingDate" type="text" value="2019/10/26" id="txtShareholdingDate" class="input-searchDate active" placeholder="yyyy/mm/dd" />
+									</div>
+								</li>
+								<li class="filter__container-input searchStockCodeName searchStock_Code">
+									<div class="form-input-text-group">
+										<div class="form-input-text searchStockCode">
+											<label for="txtStockCode">Stock Code</label>
+											<input name="txtStockCode" type="text" value="00700" maxlength="5" id="txtStockCode" name="txtStockCode" placeholder="e.g. 00001" />
+										</div>
+                                        </div>
+									<a class="reminder" href="javascript:popUpStockList('txtShareholdingDate', '');">List of Stocks &gt;</a>
+								</li>
+								<li class="filter__container-input searchStockCodeName searchStock_Name">
+									<div class="form-input-text-group">
+										<div class="form-input-text searchStockName">
+											<label for="txtStockName">Stock Name</label>
+                                            <input name="txtStockName" type="text" value="TENCENT HOLDINGS LIMITED" maxlength="80" id="txtStockName" name="txtStockName" placeholder="Keyword(s)" />
+
+										</div>
+									</div>
+								</li>
+								<li class="filter__container-input searchParticipantIDName searchParticipant_ID">
+									<div class="form-input-text-group">
+										<div class="form-input-text searchParticipantID">
+											<label for="txtParticipantID">CCASS Participant ID</label>
+											<input name="txtParticipantID" type="text" maxlength="6" id="txtParticipantID" name="txtParticipantID" placeholder="e.g. A00001" />
+										</div>
+                                        </div>
+									<a class="reminder" href="javascript:popUpParticipantList('txtShareholdingDate', '');">List of CCASS Participants (Intermediaries) &gt;</a>
+								</li>
+								<li class="filter__container-input searchParticipantIDName searchParticipant_Name">
+									<div class="form-input-text-group">
+										<div class="form-input-text searchParticipantName">
+											<label for="txtParticipantName">Name of CCASS Participant</label>
+                                            <input name="txtParticipantName" type="text" maxlength="80" id="txtParticipantName" name="txtParticipantName" placeholder="Keyword(s)" />
+                                            <input name="txtSelPartID" type="text" id="txtSelPartID" style="display:none;" />
+
+										</div>
+									</div>
+								</li>
+								<li class="filter__container-input searchButton desktop-hidden"></li>
+							</ul>
+						</div>
+						<div class="filter__buttonGroup">
+							<a class="btn-clearall filter__btn-clearallFilters-js" href="#">Clear All</a>
+                            <a id="btnSearch" title="Search" class="btn-blue" href="javascript:__doPostBack(&#39;btnSearch&#39;,&#39;&#39;)">Search</a>
+ 					    </div>
+				    </div>
+                </div>
+
+                <div class="search-bar__mobile-buttons">
+				    <a tabindex="0" class="search-bar__mobile-edit-button">Edit</a>
+			    </div>
+
+		    </section>
+
+            <div class="search-bar__mobile">
+                <div class="search-bar__selectedItem">
+                    <div class="search-bar__selectedItem-filter searchDate">
+                        <b>Shareholding Date: </b>
+                        26/10/2019
+                    </div>
+                    <div class="search-bar__selectedItem-filter searchStock">
+                        00700 <b>TENCENT HOLDINGS LIMITED</b>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CMS Control PageBanner START -->
+        <script type="text/javascript" src="/ncms/script/hkex_pagebanner.js"></script>
+        <!-- CMS Control PageBanner END -->
+
+        <div id="ccass-tools-container">
+            <div class="tools-links-nav">
+                <ul class="tools-links">
+                    <li class="tools-link"><a href="#" title="Disclaimer" class="fancy-note-label" data-target="#ccass-disclaimer" data-toggle="popup">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="fancy-note-popup-wrap fancy-note">
+                <div class="fancy-note-popup" id="ccass-disclaimer" style="display: none;">
+                    <a class="fancy-note-close" href="#"></a>
+                    <div class="fancy-note-detail">
+                        <div class="fancy-note-title">Disclaimer</div>
+                        <div class="fancy-note-desc" style=""><p>The shareholding information of CCASS Participants and other information made available under this CCASS shareholding search facility is provided for your information only.  HKEX and its subsidiaries do not take any responsibility for such information, nor do they make any warranties, whether express or implied, as to the accuracy, adequacy, quality or fitness for any particular purpose or use of such information and all such warranties are expressly excluded to the fullest extent that such warranties may be excluded by law.   You agree to bear all risks from any use of or results of using any of the information and acknowledge that the way you use or interpret such information is dependent upon the exercise of your own skill and judgment.  HKEX reserves the right to modify or discontinue, temporarily or permanently, the CCASS shareholding search facility and any information made available thereunder at any time with or without notice.</p>
+                    <p>Nothing herein shall constitute or be considered to be a limitation upon or a waiver of the privileges and immunities of HKEX and its subsidiaries, which are specifically reserved.</p></div>
+                    </div>
+                </div>
+                <div class="fancy-note-shade" style="display: none;"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $("#ccass-tools-container").each(function () {
+                var $this = $(this);
+                $(".tools-links-nav", $this).appendTo($(".banner__mobile_breadcrumb .banner__container .banner__pageheading").next(".tools"));
+                $(".fancy-note-popup-wrap", $this).appendTo(".banner__mobile_breadcrumb");
+            });
+            $("#ccass-tools-container").remove();
+        </script>
+
+        <div class="container content-container ccass-search-container content-container-reset">
+            <main class="ccass-search search-result-page">
+                <div class="ccass-search-content">
+                    <div class="ccass-search-result">
+                        <div id="pnlResultSummary">
+
+                            <div class="ccass-search-summary-table ">
+                                <div class="ccass-search-headerrow">
+                                    <div class="shareholding">
+                                        <div class="header">Shareholding in CCASS </div>
+                                    </div>
+                                    <div class="number-of-participants">
+                                        <div class="header">Number of Participants</div>
+                                    </div>
+                                    <div class="percent-of-participants">
+                                        <div class="header">% of the total number of Issued Shares/ Warrants/ Units</div>
+                                    </div>
+                                </div>
+                                <!--MI-->
+
+                                <div class="ccass-search-datarow">
+                                    <div class="summary-category">Market Intermediaries</div>
+                                    <div class="shareholding">
+                                        <div class="header">Shareholding in CCASS </div>
+                                        <div class="value">6,584,703,339</div>
+                                    </div>
+                                    <div class="number-of-participants">
+                                        <div class="header">Number of Participants</div>
+                                        <div class="value">537</div>
+                                    </div>
+                                    <div class="percent-of-participants">
+                                        <div class="header">% of the total number of Issued Shares/ Warrants/ Units</div>
+                                        <div class="value">68.92%</div>
+                                    </div>
+                                </div>
+
+                                <!--NO-->
+
+                                <div class="ccass-search-datarow">
+                                    <div class="summary-category">Consenting Investor Participants</div>
+                                    <div class="shareholding">
+                                        <div class="header">Shareholding in CCASS </div>
+                                        <div class="value">31,300</div>
+                                    </div>
+                                    <div class="number-of-participants">
+                                        <div class="header">Number of Participants</div>
+                                        <div class="value">4</div>
+                                    </div>
+                                    <div class="percent-of-participants">
+                                        <div class="header">% of the total number of Issued Shares/ Warrants/ Units</div>
+                                        <div class="value">0.00%</div>
+                                    </div>
+                                </div>
+
+                                <!--OB-->
+
+                                <div class="ccass-search-datarow">
+                                    <div class="summary-category">Non-consenting Investor Participants</div>
+                                    <div class="shareholding">
+                                        <div class="header">Shareholding in CCASS </div>
+                                        <div class="value">3,520,423</div>
+                                    </div>
+                                    <div class="number-of-participants">
+                                        <div class="header">Number of Participants</div>
+                                        <div class="value">378</div>
+                                    </div>
+                                    <div class="percent-of-participants">
+                                        <div class="header">% of the total number of Issued Shares/ Warrants/ Units</div>
+                                        <div class="value">0.03%</div>
+                                    </div>
+                                </div>
+
+                                <!--TOTAL-->
+
+                                <div class="ccass-search-datarow ccass-search-total">
+                                    <div class="summary-category">Total</div>
+                                    <div class="shareholding">
+                                        <div class="header">Shareholding in CCASS </div>
+                                        <div class="value">6,588,255,062</div>
+                                    </div>
+                                    <div class="number-of-participants">
+                                        <div class="header">Number of Participants</div>
+                                        <div class="value">919</div>
+                                    </div>
+                                    <div class="percent-of-participants">
+                                        <div class="header">% of the total number of Issued Shares/ Warrants/ Units</div>
+                                        <div class="value">68.95%</div>
+                                    </div>
+                                </div>
+
+                                <div class="ccass-search-remarks">
+                                    <div class="summary-header">
+                                        Total number of Issued Shares/Warrants/Units
+                                        (last updated figure)
+
+
+                                    </div>
+                                    <div class="summary-value">9,553,315,311</div>
+                                </div>
+                            </div>
+
+
+                            <hr />
+
+</div>
+
+                        <div id="pnlResultNormal">
+
+                            <h2 class="ccass-heading">Detail of Market Intermediaries/Consenting Investor Participants:</h2>
+                            <div class="page-list-mobile-toolbar">
+                                <div class="mobileSort">
+                                    <a tabindex="0" class="sort__dropdown" data-toggle="nav-popover">Sort by: <span class="current-sort-by">Shareholding:</span></a>
+                                    <div class="popover result-toolbar-popover">
+                                        <div class="popover__content">
+                                            <ul class="popover__content-list">
+                                                <li class="popover__list-item"><a class="popover__link" href="#" data-sort-by="participantid" data-sort-dir="asc"><span class="sort-by-field">Participant ID</span> A to Z</a></li>
+                                                <li class="popover__list-item"><a class="popover__link" href="#" data-sort-by="participantid" data-sort-dir="desc"><span class="sort-by-field">Participant ID</span> Z to A</a></li>
+                                                <li class="popover__list-item"><a class="popover__link" href="#" data-sort-by="participantname" data-sort-dir="asc"><span class="sort-by-field">Name of CCASS Participant</span> A to Z</a></li>
+                                                <li class="popover__list-item"><a class="popover__link" href="#" data-sort-by="participantname" data-sort-dir="desc"><span class="sort-by-field">Name of CCASS Participant</span> Z to A</a></li>
+                                                <li class="popover__list-item"><a class="popover__link" href="#" data-sort-by="shareholding" data-sort-dir="asc"><span class="sort-by-field">Shareholding</span> low to high</a></li>
+                                                <li class="popover__list-item"><a class="popover__link" href="#" data-sort-by="shareholding" data-sort-dir="desc"><span class="sort-by-field">Shareholding</span> high to low</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-details-table-container table-mobile-list-container">
+                                <table class="table table-scroll table-sort table-mobile-list ">
+                                    <thead>
+                                        <tr>
+                                            <th data-column-class="col-participant-id" class="col-participant-id tablesorter-header" data-sort-by="participantid" tabindex="0" data-sort-dir-default="asc">Participant ID</th>
+                                            <th data-column-class="col-participant-name" class="col-participant-name tablesorter-header" data-sort-by="participantname" tabindex="0" data-sort-dir-default="asc">Name of CCASS Participant<br>(* for Consenting Investor Participants )</th>
+                                            <th data-column-class="col-address" class="col-address sorter-false">Address</th>
+                                            <th data-column-class="col-shareholding" class="col-shareholding tablesorter-header" data-sort-by="shareholding" tabindex="0" data-sort-dir-default="desc">Shareholding</th>
+
+                                            <th data-column-class="col-shareholding-percent" class="col-shareholding-percent sorter-false text-right" tabindex="0">
+                                                % of the total number of Issued Shares/ Warrants/ Units
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                                <tr>
+                                                    <td class="col-participant-id">
+                                                        <div class="mobile-list-heading">Participant ID:</div>
+                                                        <div class="mobile-list-body">C00019</div>
+                                                    </td>
+                                                    <td class="col-participant-name">
+                                                        <div class="mobile-list-heading">Name of CCASS Participant (* for Consenting Investor Participants ):</div>
+                                                        <div class="mobile-list-body">THE HONGKONG AND SHANGHAI BANKING</div>
+                                                    </td>
+                                                    <td class="col-address">
+                                                        <div class="mobile-list-heading">Address:</div>
+                                                        <div class="mobile-list-body">HSBC WEALTH BUSINESS SERVICES 8/F TOWER 2 & 3 HSBC CENTRE 1 SHAM MONG ROAD KOWLOON</div>
+                                                    </td>
+                                                    <td class="col-shareholding text-right">
+                                                        <div class="mobile-list-heading">Shareholding:</div>
+                                                        <div class="mobile-list-body">1,710,977,428</div>
+                                                    </td>
+
+                                                    <td class="col-shareholding-percent text-right">
+                                                        <div class="mobile-list-heading">% of the total number of Issued Shares/ Warrants/ Units:</div>
+                                                        <div class="mobile-list-body">17.90%</div>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="col-participant-id">
+                                                        <div class="mobile-list-heading">Participant ID:</div>
+                                                        <div class="mobile-list-body">C00039</div>
+                                                    </td>
+                                                    <td class="col-participant-name">
+                                                        <div class="mobile-list-heading">Name of CCASS Participant (* for Consenting Investor Participants ):</div>
+                                                        <div class="mobile-list-body">STANDARD CHARTERED BANK (HONG KONG) LTD</div>
+                                                    </td>
+                                                    <td class="col-address">
+                                                        <div class="mobile-list-heading">Address:</div>
+                                                        <div class="mobile-list-body">SECURITIES SERVICES 15/F STANDARD CHARTERED TOWER 388 KWUN TONG ROAD KWUN TONG KOWLOON</div>
+                                                    </td>
+                                                    <td class="col-shareholding text-right">
+                                                        <div class="mobile-list-heading">Shareholding:</div>
+                                                        <div class="mobile-list-body">1,202,345,651</div>
+                                                    </td>
+
+                                                    <td class="col-shareholding-percent text-right">
+                                                        <div class="mobile-list-heading">% of the total number of Issued Shares/ Warrants/ Units:</div>
+                                                        <div class="mobile-list-body">12.58%</div>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="col-participant-id">
+                                                        <div class="mobile-list-heading">Participant ID:</div>
+                                                        <div class="mobile-list-body">C00100</div>
+                                                    </td>
+                                                    <td class="col-participant-name">
+                                                        <div class="mobile-list-heading">Name of CCASS Participant (* for Consenting Investor Participants ):</div>
+                                                        <div class="mobile-list-body">JPMORGAN CHASE BANK, NATIONAL</div>
+                                                    </td>
+                                                    <td class="col-address">
+                                                        <div class="mobile-list-heading">Address:</div>
+                                                        <div class="mobile-list-body">48/F ONE ISLAND EAST 18 WESTLANDS ROAD QUARRY BAY HONG KONG</div>
+                                                    </td>
+                                                    <td class="col-shareholding text-right">
+                                                        <div class="mobile-list-heading">Shareholding:</div>
+                                                        <div class="mobile-list-body">1,107,769,226</div>
+                                                    </td>
+
+                                                    <td class="col-shareholding-percent text-right">
+                                                        <div class="mobile-list-heading">% of the total number of Issued Shares/ Warrants/ Units:</div>
+                                                        <div class="mobile-list-body">11.59%</div>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="col-participant-id">
+                                                        <div class="mobile-list-heading">Participant ID:</div>
+                                                        <div class="mobile-list-body">C00010</div>
+                                                    </td>
+                                                    <td class="col-participant-name">
+                                                        <div class="mobile-list-heading">Name of CCASS Participant (* for Consenting Investor Participants ):</div>
+                                                        <div class="mobile-list-body">CITIBANK N.A.</div>
+                                                    </td>
+                                                    <td class="col-address">
+                                                        <div class="mobile-list-heading">Address:</div>
+                                                        <div class="mobile-list-body">9/F CITI TOWER ONE BAY EAST 83 HOI BUN ROAD KWUN TONG KOWLOON</div>
+                                                    </td>
+                                                    <td class="col-shareholding text-right">
+                                                        <div class="mobile-list-heading">Shareholding:</div>
+                                                        <div class="mobile-list-body">570,076,095</div>
+                                                    </td>
+
+                                                    <td class="col-shareholding-percent text-right">
+                                                        <div class="mobile-list-heading">% of the total number of Issued Shares/ Warrants/ Units:</div>
+                                                        <div class="mobile-list-body">5.96%</div>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="col-participant-id">
+                                                        <div class="mobile-list-heading">Participant ID:</div>
+                                                        <div class="mobile-list-body">B01451</div>
+                                                    </td>
+                                                    <td class="col-participant-name">
+                                                        <div class="mobile-list-heading">Name of CCASS Participant (* for Consenting Investor Participants ):</div>
+                                                        <div class="mobile-list-body">GOLDMAN SACHS (ASIA) SECURITIES LTD</div>
+                                                    </td>
+                                                    <td class="col-address">
+                                                        <div class="mobile-list-heading">Address:</div>
+                                                        <div class="mobile-list-body">68TH FLOOR CHEUNG KONG CENTER 2 QUEEN'S ROAD CENTRAL HONG KONG</div>
+                                                    </td>
+                                                    <td class="col-shareholding text-right">
+                                                        <div class="mobile-list-heading">Shareholding:</div>
+                                                        <div class="mobile-list-body">364,412,432</div>
+                                                    </td>
+
+                                                    <td class="col-shareholding-percent text-right">
+                                                        <div class="mobile-list-heading">% of the total number of Issued Shares/ Warrants/ Units:</div>
+                                                        <div class="mobile-list-body">3.81%</div>
+                                                    </td>
+
+                                                </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="search-result-page-remarks">
+                                <h3>Remarks:</h3>
+                                <div class="content">
+                                    <p>Market Intermediaries include CCASS Participants other than Investor Participants. Negative shareholding may be occurred for individual Market Intermediaries due to special circumstances. For example, it may due to incorrect signatures being found on the share certificates deposited by a Market Intermediary upon sending for re-registration. The CCASS account of the Market Intermediary will be debited for the share quantity in question until rectification. During this period, which may take a few days, the Market Intermediary's account may show a negative shareholding.</p>
+                                    <p>Non-consenting Investor Participants are those Investor Participants who do not wish to disclose their shareholding.</p>
+                                    <p>Consenting Investor Participants are those Investor Participants who wish to disclose their shareholding.<BR /></p>
+                                    <p>Shareholding details of the security with multi-counters will be shown at per counter basis while total numbers of issued shares/ warrants / units of the security for each counter are total numbers of issued shares/ warrants / units of the security of all counters. The percentages of issued shares/ warrants/ units of each counter are calculated based on the total numbers of issued shares/ warrants/ units of all counters.</p>
+                                    <p>The total number of issued shares / warrants / units of the relevant securities / units used for calculating the percentage of shareholding may not have taken into account any change in connection with or as a result of any corporate actions of the relevant securities or the creation and redemption of units and hence, may not be up-to-date. The percentage of shareholding is for reference only.  Percentage of individual Participant may not add up to the percentage of its sub-group total and total CCASS shareholding due to rounding. Please exercise caution when using the percentage presented in the CCASS Shareholding Search.</p>
+                                </div>
+                            </div>
+
+</div>
+
+                    </div>
+                </div>
+
+            </main>
+        </div>
+        </form>
+    <!-- CMS Control Footer START -->
+    <script type="text/javascript" src="/ncms/script/hkex_foot.js"></script>
+    <!-- CMS Control Footer END -->
+    <!-- NEWS Main Scripts START -->
+    <script type="text/javascript" src="/ncms/script/main.js"></script>
+    <!-- NEWS Main Scripts END -->
+    <script type="text/javascript">
+        (function ($, hkexApp) {
+            // Enable table scroll
+            hkexApp.tableUtils.enableTableScrolling();
+        })(jQuery, window.hkexApp);
+
+        var options = { MAX: new Date('2019/10/27') };
+        if (checkShareholdingDate.toLowerCase() == "true") {
+            options.MIN = new Date('2018/10/28')
+        }
+        $('#txtShareholdingDate').data('options', options).attr('data-reset', '2019/10/27');
+
+        $('#pnlStockNameList .droplist-item').on('click', function (e) {
+            var value = $(e.target).parent().attr('data-value');
+            //set stock code
+            $("#txtStockCode").val(value);
+            //remove stock code from stock name
+            var name = $('#pnlStockNameList a.combobox-field');
+            name.text(name.text().replace(value, "").trim());
+        });
+        $('#pnlParticipantName .droplist-item').on('click', function (e) {
+            $this = $(e.target).parent();
+            var value = $this.attr('data-value');
+            var hkscc = $this.attr('data-hkscc-code');
+            if (hkscc == "true") {
+                $("#txtSelPartID").val(value);
+                value = "";
+            }
+            else {
+                $("#txtSelPartID").val("");
+            }
+            //set participant id
+            $("#txtParticipantID").val(value);
+            //remove participant id from participant name
+            var name = $('#pnlParticipantName a.combobox-field');
+            name.text(name.text().replace(value, "").trim());
+        });
+        $("#btnSearch").removeAttr("href").click(function () {
+            if (preprocessMainForm($("#txtShareholdingDate").val())) {
+                __doPostBack('btnSearch', '');
+            }
+        });
+        $(".btn-clearall").click(function () {
+            $("#txtStockName").show();
+            $("#pnlStockNameList").hide();
+            $("#txtParticipantName").show();
+            $("#pnlParticipantName").hide();
+        });
+        $("form :text").keyup(function (e) {
+            if (e.keyCode == 13) {
+                $("#btnSearch").trigger("click");
+            }
+        });
+        $("table.table").serverSorting($("#sortBy"), $("#sortDirection"), function () { $("#btnSearch").trigger("click") });
+        // Add Listener to Global Events
+        $('body').on('fontSizeChange', function () {
+            $('table.table.table-scroll').scrollableTable("forcerefresh");
+        });
+    </script>
+</body>
+</html>
