@@ -58,7 +58,11 @@ var x = Xray({
   filters: {
     get_complete_date: function(fb_txt_date) {
       try {
-        return fb_date_parser(fb_txt_date);
+        if (fb_txt_date.trim() != ''){
+          return fb_date_parser(fb_txt_date);
+        }else{
+          // skipping when empty fb_txt_date;
+        }
       } catch (err) {
         log_strange_things(`error date found: ${fb_txt_date}`);
       }
@@ -66,10 +70,6 @@ var x = Xray({
     }
   }
 });
-
-function log_strange_things(things_to_log){
-  fs.appendFileSync(`${strange_log_file}`, `var strange_text=${things_to_log}`+'\n');
-}
 
 function get_num_only(text_in) {
   console.log(text_in);
@@ -146,9 +146,8 @@ function scrape_facebook(fb_page){
 
   } catch (err) {
     console.error(chalk.red(`${fb_page} found error`))
-    // throw new Error(err);
+    throw new Error(err);
   }
-
 }
 
 module.exports = scrape_facebook;
